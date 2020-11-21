@@ -176,9 +176,9 @@ public class ToastControl {
 		@Config.Comment("Set to true to disable toasts sliding in to view.")
 		public static boolean noSlide = false;
 
-		@Config.Name("Transition from Left")
-		@Config.Comment("Set to true to change the transition to start from the left.")
-		public static boolean startLeft = false;
+		@Config.Name("Transition from Edge")
+		@Config.Comment("Set to an edge to change the transition to start from the specified edge. Possible values are right, left, top, and bottom.")
+		public static String startingEdge = "right";
 	}
 
 }
