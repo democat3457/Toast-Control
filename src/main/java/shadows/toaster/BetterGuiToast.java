@@ -27,7 +27,7 @@ public class BetterGuiToast extends GuiToast {
 			for (int i = 0; i < this.visible.length; ++i) {
 				ToastInstance<?> toastinstance = this.visible[i];
 
-				if (toastinstance != null && toastinstance.render(resolution.getScaledWidth(), resolution.getScaledHeight(), i)) {
+				if (toastinstance != null && (toastinstance instanceof BetterToastInstance ? ((BetterToastInstance<?>)toastinstance).render(resolution.getScaledWidth(), resolution.getScaledHeight(), i) : toastinstance.render(resolution.getScaledWidth(), i))) {
 					this.visible[i] = null;
 				}
 
