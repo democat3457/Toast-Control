@@ -23,10 +23,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent.KeyInputEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent;
-import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import shadows.toaster.BetterGuiToast.BetterToastInstance;
 
-@SuppressWarnings("deprecation")
 @Mod(modid = ToastControl.MODID, version = ToastControl.VERSION, name = ToastControl.MODNAME, clientSideOnly = true, dependencies = ToastControl.DEPS)
 public class ToastControl {
 
@@ -63,8 +61,8 @@ public class ToastControl {
 	}
 
 	private static void change(ResourceLocation a, ResourceLocation b) {
-		ReflectionHelper.setPrivateValue(ResourceLocation.class, a, b.getNamespace(), "namespace", "field_110626_a");
-		ReflectionHelper.setPrivateValue(ResourceLocation.class, a, b.getPath(), "path", "field_110625_b");
+        a.namespace = b.getNamespace();
+        a.path = b.getPath();
 	}
 
 	public static final List<Class<?>> BLOCKED_CLASSES = new ArrayList<>();

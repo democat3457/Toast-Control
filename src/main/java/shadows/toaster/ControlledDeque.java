@@ -19,10 +19,16 @@ public class ControlledDeque extends BlockedDeque<IToast> {
 		if (ToastControlConfig.globalVanilla && isVanillaToast(toast)) return true;
 		if (ToastControlConfig.globalModded && !isVanillaToast(toast)) return true;
 		if (ToastControl.BLOCKED_CLASSES.contains(toast.getClass())) return true;
-		return (toast instanceof AdvancementToast && ToastControlConfig.advancements) || (toast instanceof RecipeToast && ToastControlConfig.recipes) || (toast instanceof SystemToast && ToastControlConfig.system) || (toast instanceof TutorialToast && ToastControlConfig.tutorial);
+        return (toast instanceof AdvancementToast && ToastControlConfig.advancements)
+             || (toast instanceof RecipeToast && ToastControlConfig.recipes)
+             || (toast instanceof SystemToast && ToastControlConfig.system)
+             || (toast instanceof TutorialToast && ToastControlConfig.tutorial);
 	}
 
 	private boolean isVanillaToast(IToast toast) {
-		return toast instanceof AdvancementToast || toast instanceof RecipeToast || toast instanceof SystemToast || toast instanceof TutorialToast;
+        return toast instanceof AdvancementToast
+             || toast instanceof RecipeToast
+             || toast instanceof SystemToast
+             || toast instanceof TutorialToast;
 	}
 }
