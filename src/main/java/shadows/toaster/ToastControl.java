@@ -61,8 +61,8 @@ public class ToastControl {
 	}
 
 	private static void change(ResourceLocation a, ResourceLocation b) {
-        a.namespace = b.getNamespace();
-        a.path = b.getPath();
+		a.namespace = b.getNamespace();
+		a.path = b.getPath();
 	}
 
 	public static final List<Class<?>> BLOCKED_CLASSES = new ArrayList<>();
